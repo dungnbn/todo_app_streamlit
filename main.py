@@ -168,7 +168,7 @@ def main(conn) -> None:
 if __name__ == '__main__':
     # sqlite3 will be imported from db_fxn if import *
     # 1 connection for all functions, instead of connecting again on each function
-    # with sqlite3.connect('data.db') as connection:
-#     #     main(connection)
-#     # connection.close()
+    with sqlite3.connect('data.db') as connection:
+        main(connection)
+    connection.close()
     pass
